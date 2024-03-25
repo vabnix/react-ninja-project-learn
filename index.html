@@ -19,38 +19,11 @@
                 name: "Vaibhav",
                 age: 41 
             }
-            onClickButton = () => {
-                console.log("Button was clicked!")
-            }
-            mouseHover = (e) => {
-                console.log(e)
-            }
-
-            onCopyEvent = (e) => {
-                console.log("User Trying to copy text");
-                console.log(e);
-            }
-            onPasteText = (e) => {
-                console.log("User pasted some text");
-                console.log(e);
-            }
-            onChangeData = (e) => {
-                this.setState({
-                    name: "Pallabi",
-                    age: 40 
-                })
-                console.log(this.state);
-            }
             render() {
                 return (
                     <div className="app-content">
                         <h1>Hello There!</h1>
                         <p> My name is {this.state.name}  and i am {this.state.age}</p>
-                        <button onClick={this.onClickButton}>Click Me</button>
-                        <button onMouseOver={this.mouseHover}>Mouse Hover</button>
-                        <p onCopy={this.onCopyEvent}>What do you think of this ?</p>
-                        <input onPaste={this.onPasteText} />
-                        <button onClick={this.onChangeData}>Change Data</button>
                     </div>
                 )
             }

@@ -1,15 +1,15 @@
 import React, { Component } from "react";
 class Ninja extends Component {
-    render() {
-        return (
-            <div className="ninja">
-                <div>Name: Vaibhav</div>
-                <div>Age: 40</div>
-                <div>Belt: Black</div>
-            </div>
-        )
-
-    }
+  render() {
+    const { name, age, belt } = this.props;
+    return (
+      <div className="ninja">
+        <div>Name: {name}</div>
+        <div>Age: {age}</div>
+        <div>Belt: {belt}</div>
+      </div>
+    );
+  }
 }
 
 export default Ninja;

@@ -1,7 +1,6 @@
 import React from "react";
 
-const Ninja = (props) => {
-  const { ninjas } = props;
+const Ninja = ({ninjas, deleteNinja}) => {
   const ninjaList = ninjas.map((ninja) => {
     return (
       <div className="form-row align-items-center ml-2 mb-2" key={ninja.id}>
@@ -9,10 +8,7 @@ const Ninja = (props) => {
         <div className="col-md-1">Age: {ninja.age}</div>
         <div className="col-md-1">Belt: {ninja.belt}</div>
         <div className="col-auto">
-          <i type="submit" className="bi bi-pencil"></i>
-        </div>
-        <div className="col-auto">
-          <i type="submit" className="bi bi-trash"></i>
+          <i type="submit" className="bi bi-trash" onClick={() => deleteNinja(ninja.id)}></i>
         </div>
       </div>
     );

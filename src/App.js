@@ -3,8 +3,6 @@ import Ninja from "./Ninja";
 import Navbar from "./navbar";
 import AddNinja from "./AddNinja";
 
-
-
 class App extends Component {
   state = {
     ninjas: [
@@ -14,26 +12,35 @@ class App extends Component {
       { name: "Ishaan", age: 4, belt: "black", id: 4 },
     ],
   };
-  AddNinja = (ninja) =>{
-     ninja.id = Math.random();
-     let ninjas = [...this.state.ninjas, ninja]
-     this.setState({
-      ninjas: ninjas
-     })
-  }
+  AddNinja = (ninja) => {
+    ninja.id = Math.random();
+    let ninjas = [...this.state.ninjas, ninja];
+    this.setState({
+      ninjas: ninjas,
+    });
+  };
   deleteNinja = (id) => {
     console.log(id);
-    let ninjas = this.state.ninjas.filter(ninja => {
-      return ninja.id !== id
+    let ninjas = this.state.ninjas.filter((ninja) => {
+      return ninja.id !== id;
     });
     this.setState({
-      ninjas: ninjas
-    })
+      ninjas: ninjas,
+    });
+  };
+  componentDidMount(){
+    console.log("Component Mounted!");
+  }
+  componentDidUpdate(prevProps, prevState){
+    console.log("Console Update !");
+    console.log(prevProps);
+    console.log(prevState);
+
   }
   render() {
     return (
       <div className="App">
-      <Navbar/>
+        <Navbar />
         <div className="jumbotron">
           <h1 className="display-4">Hello, world!</h1>
           <p className="lead">
@@ -43,7 +50,7 @@ class App extends Component {
           <hr className="my-4" />
         </div>
         <AddNinja addNinja={this.AddNinja} />
-        <Ninja ninjas={this.state.ninjas}  deleteNinja={this.deleteNinja}/>
+        <Ninja ninjas={this.state.ninjas} deleteNinja={this.deleteNinja} />
       </div>
     );
   }

@@ -6,8 +6,8 @@ import Navbar from "./navbar";
 class App extends Component {
   state = {
     ninjas: [
-      { name: "Pallabi", age: 40, belt: "black", id: 1 },
-      { name: "Vaibhav", age: 40, belt: "black", id: 2 },
+      { name: "Pallabi", age: 151, belt: "black", id: 1 },
+      { name: "Vaibhav", age: 16, belt: "black", id: 2 },
       { name: "Aum", age: 7, belt: "black", id: 3 },
       { name: "Ishaan", age: 4, belt: "black", id: 4 },
     ],

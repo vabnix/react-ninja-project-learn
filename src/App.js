@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import Ninja from "./Ninja";
 import Navbar from "./navbar";
+import AddNinja from "./AddNinja";
+
 
 
 class App extends Component {
@@ -12,6 +14,13 @@ class App extends Component {
       { name: "Ishaan", age: 4, belt: "black", id: 4 },
     ],
   };
+  AddNinja = (ninja) =>{
+     ninja.id = Math.random();
+     let ninjas = [...this.state.ninjas, ninja]
+     this.setState({
+      ninjas: ninjas
+     })
+  }
   render() {
     return (
       <div className="App">
@@ -24,6 +33,7 @@ class App extends Component {
           </p>
           <hr className="my-4" />
         </div>
+        <AddNinja addNinja={this.AddNinja} />
         <Ninja ninjas={this.state.ninjas} />
       </div>
     );
